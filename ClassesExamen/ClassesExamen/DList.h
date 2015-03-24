@@ -5,7 +5,7 @@ struct Node
 	Node* next;
 	Node* previous;
 
-	Node(TYPE& value)
+	Node(const TYPE& value)
 	{
 		data = value;
 		next = NULL;
@@ -61,7 +61,7 @@ public:
 				start = tmpNode;
 				end = tmpNode;
 			}
-
+			
 		}
 
 	}
@@ -126,10 +126,67 @@ public:
 		start = end = NULL;
 	}
 
+	Node<TYPE>* getElementAtPos(unsigned int i)
+	{
+		Node<TYPE>* tmp = start;
+
+		if (tmp != NULL && i < Count())
+		{
+			for (int c = 0; c < i; c++)
+			{
+				tmp = tmp->next;
+			}
+			return tmp;
+		}
+
+		return NULL;
+
+	}
+
+	void PrintNode(Node<TYPE>* n)
+	{
+		if (n != NULL)
+		{
+			printf("%d", n->data);
+		}
+		else
+		{
+			printf("No node in this position");
+		}
+	}
 
 
 
-	~DList(){}
+
+	int Count()
+	{
+		int count = 0;
+
+		if (start != NULL)
+		{
+			Node<TYPE>* n;
+			n = start;
+			
+			while (n!=NULL)
+			{
+				n = n->next;
+				count++;
+			}
+		
+		}
+		else
+		{
+		
+			return 0;
+		}
+	
+	
+	}
+
+	~DList()
+	{
+		clear();
+	}
 
 
 
