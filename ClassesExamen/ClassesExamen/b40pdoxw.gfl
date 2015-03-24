@@ -183,22 +183,17 @@ public:
 	int delNodes(int beginning, int finish)
 	{
 		
-			int difference = finish - beginning;
-			
-			if (finish > Count())
-			{
-				finish = Count();
-			}
+		int difference = finish - beginning;
 
-			for (int i = beginning; i < finish; i++)
-			{
-				
-				RemoveElement(getElementAtPos(beginning));
+
+		for (int i = beginning; i < difference; i++)
+		{
+			RemoveElement(getElementAtPos(beginning));
 			
-			}
+		}
 
 	
-			return difference;
+		return difference;
 	}
 
 

@@ -48,7 +48,7 @@ public:
 	
 	}
 
-	const char* getString()const{ return str; }
+	const char* GetString()const{ return str; }
 
 
 

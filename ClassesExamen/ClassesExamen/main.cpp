@@ -6,13 +6,21 @@
 
 int main()
 {
-		DList<int> List;
-		List.Add(4);
-		List.Add(5);
+		DList<int> l;
 
-		List.RemoveElement(List.getElementAtPos(0));
-		List.PrintNode(List.getElementAtPos(1));
-		//printf("%d", List.Count());
+		l.add(1);
+		l.add(2);
+		l.add(3);
+		l.add(4);
+
+		l.delNodes(1, 2);
+
+		
+		printf("%d", l.start->data);
+		printf("%d", l.end->data);
+
+		printf("%d",l.Count());
+
 		getchar();
 		return 0;
 }
