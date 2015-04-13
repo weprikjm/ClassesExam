@@ -27,7 +27,7 @@
     <ClInclude Include="Point2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Projectile.h">
+    <ClInclude Include="Tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

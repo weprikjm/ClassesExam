@@ -1,4 +1,4 @@
-#include <assert.h>
+
 template<class TYPE>
 class dynamicArray
 {
@@ -6,7 +6,7 @@ class dynamicArray
 private:
 	TYPE* content;
 	int numElements;
-	unsigned int allocatedMemory;
+	int allocatedMemory;
 
 public:
 
@@ -17,15 +17,6 @@ public:
 		allocatedMemory = 0;
 	}
 
-	dynamicArray(int n)
-	{
-		Reallocate(n);
-		numElements = 0;
-		allocatedMemory = n;
-	
-	}
-
-
 	~dynamicArray()
 	{
 		Clear();
@@ -33,9 +24,6 @@ public:
 
 	int GetElements(){ return numElements; }
 	int GetMemory(){ return allocatedMemory; }
-
-
-	unsigned int GetCapacity(){ return allocatedMemory; }
 
 
 
@@ -78,7 +66,7 @@ public:
 		{
 			//Reallocate(1);
 			numElements++;
-			
+			allocatedMemory++;
 			content[0] = value;
 		}
 	
@@ -146,22 +134,6 @@ public:
 	
 	}
 
-	TYPE& operator[](unsigned int index)
-	{
-		assert(index < numElements);
-		return content[index];
-	}
-
-	const TYPE& operator[](unsigned int index) const
-	{
-		assert(index < numElements);
-		return data[index];
-	}
-
-
-
-
-
 	//Debug purposes only
 
 	void PrintArray()
@@ -171,31 +143,9 @@ public:
 
 		for (int i = 0; i < numElements; i++)
 		{
-			printf("%d",content[i]);//We manually change % because i don't know how to make the program detect its type (it doesn't really matter cause its for debugging)
+			printf("%c",content[i]);//We manually change % because i don't know how to make the program detect its type (it doesn't really matter cause its for debugging)
 		}
 	}
-
-
-	int removeWastedMemory()
-	{
-		int freedMemory = 0;
-
-		freedMemory = allocatedMemory - numElements;
-		allocatedMemory = numElements;
-
-		TYPE* tmp = new TYPE[allocatedMemory];
-		tmp = content;
-		
-		content = tmp;
-
-
-
-		return freedMemory;
-	}
-
-
-
-
 
 
 

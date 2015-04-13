@@ -1,3 +1,6 @@
+#ifndef DLIST_H
+#define DLIST_H
+
 template<typename TYPE>
 struct Node
 {
@@ -19,7 +22,7 @@ struct Node
 template<class TYPE>
 class DList
 {
-public:
+private:
 	Node<TYPE>* start;
 	Node<TYPE>* end;
 
@@ -44,7 +47,7 @@ public:
 	}
 
 
-	void add(const TYPE& oneNode)
+	void Add(const TYPE& oneNode)
 	{
 		if (oneNode != NULL)
 		{
@@ -158,7 +161,7 @@ public:
 
 
 
-	unsigned int Count()
+	int Count()
 	{
 		int count = 0;
 
@@ -174,34 +177,14 @@ public:
 			}
 		
 		}
+		else
+		{
 		
-		return count;
+			return 0;
+		}
 	
 	
 	}
-
-	int delNodes(int beginning, int finish)
-	{
-		
-			int difference = finish - beginning;
-			
-			if (finish > Count())
-			{
-				finish = Count();
-			}
-
-			for (int i = beginning; i < finish; i++)
-			{
-				
-				RemoveElement(getElementAtPos(beginning));
-			
-			}
-
-	
-			return difference;
-	}
-
-
 
 	~DList()
 	{
@@ -211,3 +194,5 @@ public:
 
 
 };
+
+#endif
