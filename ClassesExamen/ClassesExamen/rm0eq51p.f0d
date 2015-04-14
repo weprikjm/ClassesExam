@@ -25,13 +25,12 @@ public:
 	//Methods
 	void VisitAll(DList<TYPE>* list)
 	{ 
-		list->Add(data);
-		Node<TYPE>* tmp = siblings.getStart();
-
+		list.Add(data);
+		
 		while(tmp != NULL)
 		{
-			tmp->data->VisitAll(list);
-			tmp = tmp->next;
+		
+			node->VisitAll(list);
 		}
 	}
 };

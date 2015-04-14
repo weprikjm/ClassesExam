@@ -7,11 +7,17 @@
 
 int main()
 {
-		Tree<int> arbre;
-		NodeTree<int>* node1 = new NodeTree<int>(3);
-		
-		arbre.Add(node1);
-		arbre.root->siblings.PrintNode(arbre.root->siblings.getElementAtPos(0));
+		Tree<char> arbre('F');
+
+		NodeTree<char>* b = arbre.Add('B');
+		NodeTree<char>* g = arbre.Add('G');
+		arbre.Add('A',b);
+		NodeTree<char>* d = arbre.Add('D', b);
+		arbre.Add('C', d);
+		arbre.Add('E', d);
+	
+		DList<char>* list = new DList<char>;
+		arbre.VisitAllNodes(list);
 
 		getchar();
 

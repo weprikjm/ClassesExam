@@ -23,17 +23,7 @@ public:
 	~NodeTree(){ }
 
 	//Methods
-	void VisitAll(DList<TYPE>* list)
-	{ 
-		list->Add(data);
-		Node<TYPE>* tmp = siblings.getStart();
-
-		while(tmp != NULL)
-		{
-			tmp->data->VisitAll(list);
-			tmp = tmp->next;
-		}
-	}
+	
 };
 
 template <class TYPE>
@@ -48,29 +38,25 @@ public:
 	NodeTree<TYPE>* Add(const TYPE data)
 	{
 		NodeTree<TYPE>* nodeToAdd = new NodeTree<TYPE>(data, root);
-		root->siblings.Add(nodeToAdd);
+		root->siblings->Add(nodeToAdd);
 		return nodeToAdd;
 	}
 
 	NodeTree<TYPE>* Add(TYPE newData, NodeTree<TYPE>* newNode)
 	{
+		NodeTree<TYPE>* newNode = new NodeTree(newData);
 
 		if (root == NULL)
 			root = newNode;
 		else
 		{
-			root->siblings.Add(newNode);
+			root->siblings->Add(newNode);
 		}
 
 		return newNode;
 	}
 
-	void VisitAllNodes(DList<TYPE>* list)const
-	{
-		
-		root->VisitAll(list);
-	
-	}
+
 
 
 };

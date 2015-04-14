@@ -33,13 +33,13 @@ public:
 		end = NULL;
 	}
 
-	DList<TYPE>* getStart()
+	Node<TYPE>* getStart()
 	{
 	
 		return start;
 	}
 
-	DList<TYPE>* getEnd()
+	Node<TYPE>* getEnd()
 	{
 	
 		return end;
