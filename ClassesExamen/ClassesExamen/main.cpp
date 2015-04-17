@@ -15,9 +15,14 @@ int main()
 		NodeTree<char>* d = arbre.Add('D', b);
 		arbre.Add('C', d);
 		arbre.Add('E', d);
-	
-		DList<char>* list = new DList<char>;
-		arbre.VisitAllNodes(list);
+		NodeTree<char>* i = arbre.Add('I', g);
+		arbre.Add('H', i);
+
+		DList<NodeTree<char>*> list;
+
+		arbre.TreeVisitAllNodesInOrderRecursive(&list);
+
+		arbre.PrintTree(&list);
 
 		getchar();
 
