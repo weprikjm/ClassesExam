@@ -1,7 +1,4 @@
 
-
-
-
 #include "DList.h"
 
 #ifndef TREE_H
@@ -35,8 +32,9 @@ public:
 
 
 
+
 	//Methods
-	void VisitAllPreOrderRecursive(DList<NodeTree<TYPE>*>* list)
+	void VisitAllPreOrderRecursive(DList<NodeTree<TYPE>*>* list)																						
 	{ 
 		list->Add(this);
 		Node<NodeTree*>* tmp = siblings.getStart();

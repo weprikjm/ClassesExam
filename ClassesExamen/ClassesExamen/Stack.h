@@ -1,3 +1,6 @@
+#ifndef STACK_H
+#define STACK_H
+
 template<typename TYPE>
 struct Node
 {
@@ -19,7 +22,7 @@ struct Node
 template<class TYPE>
 class DList
 {
-public:
+private:
 	Node<TYPE>* start;
 	Node<TYPE>* end;
 
@@ -30,21 +33,21 @@ public:
 		end = NULL;
 	}
 
-	DList<TYPE>* getStart()
+	Node<TYPE>* getStart()
 	{
-	
+
 		return start;
 	}
 
-	DList<TYPE>* getEnd()
+	Node<TYPE>* getEnd()
 	{
-	
+
 		return end;
-	
+
 	}
 
 
-	void add(const TYPE& oneNode)
+	void Push(const TYPE& oneNode)
 	{
 		if (oneNode != NULL)
 		{
@@ -61,16 +64,19 @@ public:
 				start = tmpNode;
 				end = tmpNode;
 			}
-			
+
 		}
 
 	}
+
+
+	Node
 
 	bool RemoveElement(Node<TYPE>* nodeToRemove)
 	{
 		if (start != NULL)
 		{
-			
+
 			if (nodeToRemove->next == NULL)//If it's the end
 			{
 
@@ -90,7 +96,7 @@ public:
 					nodeToRemove->next->previous = NULL;//We set null to the next node after the first that is being removed
 					start = nodeToRemove->next;
 				}
-					
+
 
 			}
 			else//If it's in the middle
@@ -98,12 +104,12 @@ public:
 				nodeToRemove->previous->next = nodeToRemove->next;
 				nodeToRemove->next->previous = nodeToRemove->previous;
 			}
-		
+
 		}
 		else
 		{
 			return false;
-		
+
 		}
 
 		delete nodeToRemove;
@@ -158,7 +164,7 @@ public:
 
 
 
-	unsigned int Count()
+	int Count()
 	{
 		int count = 0;
 
@@ -166,37 +172,22 @@ public:
 		{
 			Node<TYPE>* n;
 			n = start;
-			
-			while (n!=NULL)
+
+			while (n != NULL)
 			{
 				n = n->next;
 				count++;
 			}
-		
+
 		}
-		
-		return count;
-	
-	
-	}
-
-	int delNodes(int beginning, int finish)
-	{
-		
-		int difference = finish - beginning;
-
-
-		for (int i = beginning; i < difference; i++)
+		else
 		{
-			RemoveElement(getElementAtPos(beginning));
-			
+
+			return 0;
 		}
 
-	
-		return difference;
+
 	}
-
-
 
 	~DList()
 	{
@@ -206,3 +197,5 @@ public:
 
 
 };
+
+#endif
