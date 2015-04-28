@@ -1,8 +1,10 @@
 
 #include "DList.h"
+#include "p2Stack.h"
 
 #ifndef TREE_H
 #define TREE_H
+
 template <class TYPE>
 class NodeTree
 {
@@ -81,20 +83,6 @@ public:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 };
 
 template <class TYPE>
@@ -142,6 +130,109 @@ public:
 
 		root->VisitAllInOrderRecursive(list);
 	}
+
+	void VisitAllPreOrderIterative(DList<NodeTree<TYPE>*>* list)
+	{
+
+		p2Stack<NodeTree<TYPE>*> stack;
+		NodeTree<TYPE>* node = root;
+		
+
+		while (node!=NULL)
+		{
+			list->Add(node);
+			Node<NodeTree<TYPE>*>* nodetmp = node->siblings.getEnd();
+			while (nodetmp!=NULL)
+			{
+				stack.Push(nodetmp->data);
+				
+				nodetmp = nodetmp->previous;
+			}
+			if (nodetmp != NULL)
+			{
+			
+				node = nodetmp->data;
+			}
+			else
+			{
+				node = NULL;
+				
+			}
+
+				stack.Pop(node);
+
+				
+		}
+
+	}
+
+
+	void VisitAllPostOrderIterative(DList<NodeTree<TYPE>*>* list)
+	{
+
+		p2Stack<NodeTree<TYPE>*> stack;
+		NodeTree<TYPE>* node = root;
+
+		
+		while (node != NULL)
+		{
+			
+			Node<NodeTree<TYPE>*>* nodetmp = node->siblings.getEnd();
+
+			if (nodetmp != NULL && list->isIn(nodetmp->data) == false)
+			{
+				stack.Push(node);
+				while (nodetmp != node->siblings.getStart() && list->isIn(node) == false)
+				{
+					stack.Push(nodetmp->data);
+					nodetmp = nodetmp->previous;
+				}
+				stack.Push(nodetmp->data);
+				node = nodetmp->data;
+			}
+			else 
+			{
+				if (list->isIn(node) == false)
+					list->Add(node);
+				node = NULL;
+			}
+			
+			stack.Pop(node);
+		}
+	
+	}
+
+	void VisitAllInOrderIterative(DList<NodeTree<TYPE>*>* list)
+	{
+		p2Stack<NodeTree<TYPE>*> stack;
+		NodeTree<TYPE>* node = root;
+
+		while (node != NULL)
+		{
+
+			list->Add(node);
+			Node<NodeTree<TYPE>*>* nodetmp = node->siblings.getEnd();
+			
+			while (nodetmp != node->siblings.getStart())
+			{
+				stack.Push(nodetmp->data);
+				nodetmp = nodetmp->previous;
+			}
+			stack.Push(nodetmp->data);
+			node = nodetmp->data;
+
+
+			stack.Pop(node);
+		}
+	}
+
+
+
+
+
+
+
+
 
 	void PrintTree(DList<NodeTree<TYPE>*>* list)const
 	{

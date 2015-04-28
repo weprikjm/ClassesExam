@@ -4,6 +4,7 @@
 #include "myString.h"
 #include "Point2D.h"
 #include "Tree.h"
+#include "p2Stack.h"
 
 int main()
 {
@@ -20,7 +21,7 @@ int main()
 
 		DList<NodeTree<char>*> list;
 
-		arbre.TreeVisitAllNodesInOrderRecursive(&list);
+		arbre.VisitAllInOrderIterative(&list);
 
 		arbre.PrintTree(&list);
 

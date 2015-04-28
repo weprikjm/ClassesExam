@@ -158,6 +158,21 @@ public:
 		}
 	}
 
+	bool isIn(const TYPE& toFind )
+	{
+		Node<TYPE>* tmp = this->getStart();
+		bool comprovation = false;
+
+		while (tmp != NULL)
+		{
+			if (tmp->data == toFind)
+			{
+				comprovation = true;
+			}
+			tmp = tmp->next;
+		}
+		return comprovation;
+	}
 
 
 
@@ -194,5 +209,6 @@ public:
 
 
 };
+
 
 #endif
