@@ -210,20 +210,31 @@ public:
 		while (node != NULL)
 		{
 
-			list->Add(node);
-			Node<NodeTree<TYPE>*>* nodetmp = node->siblings.getEnd();
-			
-			while (nodetmp != node->siblings.getStart())
+
+
+			if (node->siblings.Count() != 0)
 			{
-				stack.Push(nodetmp->data);
-				nodetmp = nodetmp->previous;
+				node = node->siblings.getStart();
+				stack->Push(node);
 			}
-			stack.Push(nodetmp->data);
-			node = nodetmp->data;
+			else
+			{
+				node = NULL;
+			}
 
 
-			stack.Pop(node);
+
+
+
+
 		}
+		
+	
+
+
+
+
+
 	}
 
 
