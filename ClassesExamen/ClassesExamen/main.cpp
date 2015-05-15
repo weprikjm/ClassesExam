@@ -5,25 +5,21 @@
 #include "Point2D.h"
 #include "Tree.h"
 #include "p2Stack.h"
+#include "Circle.h"
 
-int main()
+int main(int argc, char** argv)
 {
-		Tree<char> arbre('F');
+		myString oneArray;
+		oneArray.setString("   hola  ");
 
-		NodeTree<char>* b = arbre.Add('B');
-		NodeTree<char>* g = arbre.Add('G');
-		arbre.Add('A',b);
-		NodeTree<char>* d = arbre.Add('D', b);
-		arbre.Add('C', d);
-		arbre.Add('E', d);
-		NodeTree<char>* i = arbre.Add('I', g);
-		arbre.Add('H', i);
+		oneArray.Trim();
 
-		DList<NodeTree<char>*> list;
+		oneArray.PrintString();
+	
 
-		arbre.VisitAllInOrderIterative(&list);
 
-		arbre.PrintTree(&list);
+
+		
 
 		getchar();
 

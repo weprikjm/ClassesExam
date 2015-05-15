@@ -181,6 +181,37 @@ public:
 	}
 
 
+	void Trim()
+	{
+		int i = 0;
+		int j = 0;
+		int counter = 0;
+
+		while (str[i] == ' ')
+		{
+			i++;
+		}
+
+		for (; i < allocatedMemory; i++, j++)
+		{
+			str[j] = str[i];
+		}
+
+		i = strlen(str)-1;
+		
+		while (str[i] == ' ')
+		{ 
+			i--;
+			counter++;
+		}
+
+		
+		str[allocatedMemory - counter] = "/0";
+
+
+	
+	}
+
 
 
 };

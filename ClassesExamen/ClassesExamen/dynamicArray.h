@@ -127,9 +127,11 @@ public:
 
 	void CopyArray(TYPE* dst,TYPE* src, const unsigned int offset, const unsigned int until)
 	{
-		for (int i = offset; i <= until; i++)
+		int j=0;
+
+		for (int i = offset; i <= until; i++, j++)
 		{
-			dst[i] = src[i];
+			dst[j] = src[i];
 		}
 	
 	}
@@ -147,6 +149,40 @@ public:
 		}
 	}
 
+
+	void Trim()
+	{
+		int i = 0;
+		TYPE* tmp = new TYPE;
+
+		while (content[i] == ' ')
+		{
+			i++;
+		}
+
+		CopyArray(tmp,content, i, numElements-i);
+
+		content = tmp;
+
+		numElements -= i;
+
+		
+		int counter=0;
+		i = numElements;
+
+		while (content[i] == ' ')
+		{
+			i--;
+			counter++;
+		}
+
+		CopyArray(tmp, content, 0, (numElements-counter));
+
+		//content = tmp;
+
+		
+
+	}
 
 
 };

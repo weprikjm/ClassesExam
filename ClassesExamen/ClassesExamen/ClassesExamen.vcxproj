@@ -64,6 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Circle.h" />
     <ClInclude Include="DList.h" />
     <ClInclude Include="dynamicArray.h" />
     <ClInclude Include="myString.h" />

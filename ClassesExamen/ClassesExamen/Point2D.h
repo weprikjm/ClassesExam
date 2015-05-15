@@ -31,7 +31,7 @@ public:
 		{
 			printf("\nx: %f\ny: %f\n----------------------", x, y);
 		}
-		const TYPE DistanceTo(Point2D p)
+		const TYPE DistanceTo(Point2D& p)
 		{
 			p.x = (p.x - x)*(p.x - x);
 			p.y = (p.x - x)*(p.x - x);
