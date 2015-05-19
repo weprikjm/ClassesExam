@@ -69,6 +69,8 @@ public:
 
 	}
 
+
+
 	bool RemoveElement(Node<TYPE>* nodeToRemove)
 	{
 		if (start != NULL)
@@ -200,6 +202,38 @@ public:
 	
 	
 	}
+
+	const TYPE& operator [](const unsigned int n)
+	{
+		Node<TYPE>* tmp;
+		tmp = start;
+
+		if (n > Count())
+		{
+			return NULL;
+		}
+
+		for (int i = 0; i < n; i++)
+		{
+			if (i == n)
+			{
+				return tmp->data;
+			}
+
+			tmp = tmp->next;
+		}
+
+
+	
+	}
+
+
+
+
+
+
+
+
 
 	~DList()
 	{

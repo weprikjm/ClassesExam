@@ -9,16 +9,13 @@
 
 int main(int argc, char** argv)
 {
-		myString oneArray;
-		oneArray.setString("   hola  ");
+		DList<int> vector;
 
-		oneArray.Trim();
-
-		oneArray.PrintString();
-	
-
-
-
+		vector.Add(1);
+		vector.Add(2);
+		vector.Add(3);
+		int i = vector[0];
+		printf("%d",i);
 		
 
 		getchar();
