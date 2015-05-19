@@ -1,3 +1,5 @@
+#include <assert.h>
+
 
 template<class TYPE>
 class dynamicArray
@@ -145,7 +147,7 @@ public:
 
 		for (int i = 0; i < numElements; i++)
 		{
-			printf("%c",content[i]);//We manually change % because i don't know how to make the program detect its type (it doesn't really matter cause its for debugging)
+			printf("%d",content[i]);//We manually change % because i don't know how to make the program detect its type (it doesn't really matter cause its for debugging)
 		}
 	}
 
@@ -181,8 +183,38 @@ public:
 		//content = tmp;
 
 		
-
 	}
+
+	TYPE& operator[](unsigned int index)
+	{
+		ASSERT(index < numElements);
+		return content[index];
+	}
+
+	const TYPE& operator[](unsigned int index) const
+	{
+		assert(index < numElements);
+		return content[index];
+	}
+
+
+
+
+	void Mirror()
+	{
+		for (int i = 0, j = numElements - 1; i < j; i++, j--)
+			Swap(content[i], content[j]);
+	
+	}
+
+	void Swap(TYPE &a, TYPE &b)
+	{
+		TYPE tmp = a;
+		a = b;
+		b = tmp;
+	}
+
+
 
 
 };

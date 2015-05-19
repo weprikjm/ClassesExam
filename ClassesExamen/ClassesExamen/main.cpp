@@ -7,15 +7,28 @@
 #include "p2Stack.h"
 #include "Circle.h"
 
+int* fibonacci(int n, int* previous, int* next, int* total)
+{
+
+
+	if (n == 0)
+		return total;
+	
+
+	*total = *previous + *next;
+
+	return fibonacci(n*-1, next, total, total);
+
+}
+
+
+
+
 int main(int argc, char** argv)
 {
-		DList<int> vector;
-
-		vector.Add(1);
-		vector.Add(2);
-		vector.Add(3);
-		int i = vector[0];
-		printf("%d",i);
+		dynamicArray<int> vector;
+		int* total;
+		fibonacci(4, 1, 1, &total);
 		
 
 		getchar();

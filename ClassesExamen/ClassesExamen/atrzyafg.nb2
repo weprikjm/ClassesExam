@@ -245,24 +245,9 @@ public:
 
 	void Swap(Node<TYPE>* a, Node<TYPE>* b)
 	{
-		Node<TYPE>* tmp = a;
+		Node<TYPE> tmp = a;
 		a = b;
-		
-		tmp->previous->next = a;
-
-		b->next->previous;
-
-		tmp->previous = b->previous;
-		tmp->next = b->next;
-
-
-
-		//a->previous->next = b;
-		//b->next->previous = a;
-
-
 		b = tmp;
-
 	}
 
 	/*
