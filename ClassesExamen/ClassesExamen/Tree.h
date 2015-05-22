@@ -202,8 +202,34 @@ public:
 	
 	}
 
-	void VisitAllInOrderIterative(DList<NodeTree<TYPE>*>* list)
+	void VisitAllInOrderIterative(DList<NodeTree<TYPE>*>* list, NodeTree<TYPE>* node)
 	{
+		
+		stack s;
+		llista nodes;
+
+		s.push(node);
+		
+		while (stack.Count()>0 || nodes.Count()>0)
+		{
+			if (nodes.Count() > 0)
+			{
+				stack->llista;
+				llista->fillsEsquerra;
+			}
+			else
+			{
+				visit(stack.pop());
+				llista->fillsdreta;
+			}
+		
+		}
+		
+		
+		
+		
+		
+		/*
 		p2Stack<NodeTree<TYPE>*> stack;
 		NodeTree<TYPE>* node = root;
 
@@ -221,7 +247,7 @@ public:
 			{
 				node = NULL;
 			}
-
+			*/
 
 
 

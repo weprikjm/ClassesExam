@@ -6,18 +6,41 @@
 #include "Tree.h"
 #include "p2Stack.h"
 #include "Circle.h"
+#include "arrayList.h"
 
-int* fibonacci(int n, int* previous, int* next, int* total)
+int fibonacci_rec(int n)
 {
 
 
-	if (n == 0)
-		return total;
+	if (n == 0 || n == 1)
+		return 1;
+
+
+
+
+	return fibonacci_rec(n-1) + fibonacci_rec(n-2);
+
+}
+
+
+
+int fibonacci_it(int pos)
+{
+	int nextValue = 1;
+	int previousValue = 0;
+
+	if (pos == 0 || pos == 1)
+		return 1;
+
+	else
+		for (int i = 0; i < pos; i++)
+		{
+			nextValue += previousValue;
+			previousValue
+		}
 	
 
-	*total = *previous + *next;
-
-	return fibonacci(n*-1, next, total, total);
+		return nextValue;
 
 }
 
@@ -26,10 +49,15 @@ int* fibonacci(int n, int* previous, int* next, int* total)
 
 int main(int argc, char** argv)
 {
-		dynamicArray<int> vector;
-		int* total;
-		fibonacci(4, 1, 1, &total);
-		
+		arrayList<int> queueList;
+		Node<int>* node;
+
+		queueList.Push(1);
+		queueList.Push(2);
+
+		queueList.Pop(node);
+
+
 
 		getchar();
 

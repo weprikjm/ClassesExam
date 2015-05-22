@@ -206,7 +206,7 @@ public:
 		}
 
 		
-//		str[allocatedMemory - counter] = "/0";
+
 
 
 	
