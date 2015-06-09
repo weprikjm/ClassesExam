@@ -19,7 +19,13 @@
 
 int main(int argc, char** argv)
 {
+	myString s1;
+	s1.setString("Hola mundo");
+	s1.Cut(2, 5);
+	
+	s1.Cut(3, 0);
 	
 
+		getchar();
 		return 0;
 }

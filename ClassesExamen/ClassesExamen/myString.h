@@ -212,6 +212,20 @@ public:
 	
 	}
 
+	void Cut(const int start, const int end)
+	{
+		int difference = end - start;
+		int size = strlen(str);
+		char* tmp = new char[strlen(str)+1];
+	
+
+
+		strcpy_s(tmp, strlen(str)+1, str);
+
+		printf("%s", tmp);
+	}
+
+
 
 
 };

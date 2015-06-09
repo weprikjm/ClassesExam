@@ -127,6 +127,10 @@ public:
 	
 	}
 
+
+
+
+
 	void CopyArray(TYPE* dst,TYPE* src, const unsigned int offset, const unsigned int until)
 	{
 		int j=0;
@@ -185,9 +189,49 @@ public:
 		
 	}
 
+
+
+
+
+	const dynamicArray<TYPE>& operator+=( dynamicArray<TYPE>& string2)
+	{
+		
+		dynamicArray<TYPE>* tmp = new dynamicArray<TYPE>;
+		
+		tmp->Reallocate(GetElements());
+
+		int size = tmp->GetElements();
+		
+		for (int i = 0; i < numElements; i++) // We copy 
+		{
+			tmp->content[i] = content[i];
+		}
+
+
+		Reallocate(numElements+string2.GetElements());
+
+		for (int i = 0; i < numElements; i++)
+		{
+			content[i] = tmp->content[i];
+		}
+
+
+		for (int j = 0 ,i = size; i < this->GetElements(); i++, j++)
+		{
+			content[i] = string2.content[j];
+		
+		}
+		
+		delete tmp;
+	
+		return (*this);
+	}
+
+
+
 	TYPE& operator[](unsigned int index)
 	{
-		ASSERT(index < numElements);
+		assert(index < numElements);
 		return content[index];
 	}
 
