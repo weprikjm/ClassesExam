@@ -247,7 +247,7 @@ public:
 			{
 				node = NULL;
 			}
-			*/
+			
 
 
 
@@ -256,7 +256,7 @@ public:
 		}
 		
 	
-
+	*/
 
 
 
@@ -274,7 +274,6 @@ public:
 	void PrintTree(DList<NodeTree<TYPE>*>* list)const
 	{
 		
-
 		Node<NodeTree<TYPE>*>* node1 = list->getStart();
 
 		while (node1!=NULL)
@@ -284,7 +283,6 @@ public:
 		}
 	
 
-	
 	}
 
 };

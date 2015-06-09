@@ -9,7 +9,7 @@ class arrayList
 {
 public:
 
-	uint left_index = 0;
+	unsigned int left_index = 0;
 
 	DList<VALUE> data;
 
