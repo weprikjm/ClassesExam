@@ -23,15 +23,33 @@ int main(int argc, char** argv)
 
 
 	//String exercise
-	
+	/*
 	myString s;
 	s.setString("Hola Mundo");
 
 	TEST(s.DoubleVocals() == 4);
 	TEST(s == "Hoolaa Muundoo");
-	
+	*/
 
-	
+	DList<int> list;
+	list.Add(1);
+	list.Add(2);
+	list.Add(3);
+	list.Add(4);
+	list.Add(5);
+	list.Add(6);
+	list.Add(7);
+
+	list.Flip();
+
+	TEST(list[0] == 7);
+	TEST(list[1] == 6);
+	TEST(list[2] == 5);
+	TEST(list[3] == 4);
+	TEST(list[4] == 3);
+	TEST(list[5] == 2);
+	TEST(list[6] == 1);
+
 
 
 	getchar();

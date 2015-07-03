@@ -213,52 +213,7 @@ public:
 	}
 
 
-	int DoubleVocals()
-	{
-		int i = 0;
-		int total = 0;
-
-		while (str[i] != '\0')
-		{
-			if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u'
-				|| str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U')
-			{
-				total++;
-			}
-
-			i++;
-		}
-
-		char* tmp;
-
-		tmp = str;
-
-		Alloc(allocatedMemory + total);
-
-		
-		i = 0;
-
-		int secondCounter = 0;
-
-		while (tmp[i] != '\0')
-		{
-			if (tmp[i] == 'a' || tmp[i] == 'e' || tmp[i] == 'i' || tmp[i] == 'o' || tmp[i] == 'u'
-				|| tmp[i] == 'A' || tmp[i] == 'E' || tmp[i] == 'I' || tmp[i] == 'O' || tmp[i] == 'U')
-			{
-				str[secondCounter] = tmp[i];
-				secondCounter++;
-			}
-
-			str[secondCounter] = tmp[i];
-
-			secondCounter++;
-			i++;
-		}
-
-		str[secondCounter] = '\0';
-
-		return total;
-	}
+	int DoubleVocals(){ }
 
 	void Cut(const int start, const int end)
 	{

@@ -1,0 +1,10 @@
+template <class TYPE>
+class Rectangle
+{
+	TYPE x;
+	TYPE y;
+	TYPE h;
+	TYPE w;
+
+
+};

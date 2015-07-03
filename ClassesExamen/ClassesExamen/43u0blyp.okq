@@ -248,17 +248,20 @@ public:
 		Node<TYPE>* tmp = a;
 		a = b;
 		
-		a->previous = tmp->previous;
-		a->next = tmp->next;
-		tmp->next = b->next;
-		tmp->previous = b->previous;
+		if (tmp->previous != NULL)
+			tmp->previous->next = a;
+	
 		
 
+		tmp->previous = b->previous;
+		tmp->next = b->next;
 
-		tmp->previous->next = tmp;
-		a->next->previous = a;
 
-	
+
+		a->previous->next = b;
+		b->next->previous = a;
+
+
 		b = tmp;
 
 	}
@@ -268,7 +271,7 @@ public:
 		Node<TYPE>* tmpFirst = start;
 		Node<TYPE>* tmpLast = end;
 
-		for (; tmpFirst->previous != tmpLast || tmpLast->next != tmpFirst; tmpFirst = tmpFirst->previous, tmpLast = tmpLast->next)
+		for (; tmpFirst->previous != tmpLast || tmpLast->next != tmpFirst; tmpFirst = tmpFirst->next, tmpLast = tmpLast->previous)
 		{
 			Swap(tmpFirst, tmpLast);
 		}

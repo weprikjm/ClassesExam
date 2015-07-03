@@ -248,15 +248,14 @@ public:
 		Node<TYPE>* tmp = a;
 		a = b;
 		
-		a->previous = tmp->previous;
-		a->next = tmp->next;
 		tmp->next = b->next;
 		tmp->previous = b->previous;
-		
+		b->previous = a->previous;
+		b->next = a->next;
 
 
-		tmp->previous->next = tmp;
-		a->next->previous = a;
+		tmp->next->previous = tmp;
+		b->previous->next = b;
 
 	
 		b = tmp;

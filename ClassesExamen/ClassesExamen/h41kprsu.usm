@@ -21,18 +21,12 @@
 int main(int argc, char** argv)
 {
 
-
-	//String exercise
-	
-	myString s;
-	s.setString("Hola Mundo");
-
-	TEST(s.DoubleVocals() == 4);
-	TEST(s == "Hoolaa Muundoo");
-	
-
-	
-
+	Rectangle<int> r(10, 10, 40, 50);
+	Rectangle<int> r2(r);
+	TEST(r.x == 10);
+	TEST(r2.y == 10);
+	TEST(r2.GetArea() == 2000);
+	TEST(r2.Intersects(r) == true);
 
 	getchar();
 

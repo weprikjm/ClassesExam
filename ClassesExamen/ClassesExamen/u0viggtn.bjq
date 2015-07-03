@@ -1,0 +1,21 @@
+template <class TYPE>
+class Rectangle
+{
+	TYPE x;
+	TYPE y;
+	TYPE h;
+	TYPE w;
+
+	Rectangle(TYPE _x, TYPE _y, TYPE _h, TYPE _w){ x = _x; y = _y; h = _h; w = _w; }
+
+	Rectangle(Rectangle r){ x = r.x; y = r.y; h = r.h; w = r.w;}
+
+
+	void GetArea()
+	{
+	
+	}
+
+
+
+};

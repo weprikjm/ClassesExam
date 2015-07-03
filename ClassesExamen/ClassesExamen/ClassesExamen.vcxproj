@@ -72,6 +72,7 @@
     <ClInclude Include="p2Defs.h" />
     <ClInclude Include="p2Stack.h" />
     <ClInclude Include="Point2D.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="Tree.h" />
   </ItemGroup>

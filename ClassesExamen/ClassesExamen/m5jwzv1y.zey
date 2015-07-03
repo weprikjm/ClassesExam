@@ -229,33 +229,12 @@ public:
 			i++;
 		}
 
-		char* tmp;
+		myString* tmp;
 
 		tmp = str;
 
 		Alloc(allocatedMemory + total);
 
-		
-		i = 0;
-
-		int secondCounter = 0;
-
-		while (tmp[i] != '\0')
-		{
-			if (tmp[i] == 'a' || tmp[i] == 'e' || tmp[i] == 'i' || tmp[i] == 'o' || tmp[i] == 'u'
-				|| tmp[i] == 'A' || tmp[i] == 'E' || tmp[i] == 'I' || tmp[i] == 'O' || tmp[i] == 'U')
-			{
-				str[secondCounter] = tmp[i];
-				secondCounter++;
-			}
-
-			str[secondCounter] = tmp[i];
-
-			secondCounter++;
-			i++;
-		}
-
-		str[secondCounter] = '\0';
 
 		return total;
 	}

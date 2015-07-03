@@ -255,7 +255,6 @@ public:
 			i++;
 		}
 
-		str[secondCounter] = '\0';
 
 		return total;
 	}

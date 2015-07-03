@@ -248,29 +248,31 @@ public:
 		Node<TYPE>* tmp = a;
 		a = b;
 		
-		a->previous = tmp->previous;
-		a->next = tmp->next;
-		tmp->next = b->next;
+		tmp->previous->next = a;
+
+		b->next->previous;
+
 		tmp->previous = b->previous;
-		
+		tmp->next = b->next;
 
 
-		tmp->previous->next = tmp;
-		a->next->previous = a;
 
-	
+		//a->previous->next = b;
+		//b->next->previous = a;
+
+
 		b = tmp;
 
 	}
 
 	void Flip()
 	{
-		Node<TYPE>* tmpFirst = start;
-		Node<TYPE>* tmpLast = end;
+		Node<TYPE>* tmpFirst;
+		Node<TYPE>* tmpLast;
 
-		for (; tmpFirst->previous != tmpLast || tmpLast->next != tmpFirst; tmpFirst = tmpFirst->previous, tmpLast = tmpLast->next)
+		for ()
 		{
-			Swap(tmpFirst, tmpLast);
+		
 		}
 	
 	}

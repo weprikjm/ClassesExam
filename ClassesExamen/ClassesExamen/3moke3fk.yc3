@@ -23,17 +23,13 @@ int main(int argc, char** argv)
 
 
 	//String exercise
-	
+	/*
 	myString s;
 	s.setString("Hola Mundo");
 
 	TEST(s.DoubleVocals() == 4);
 	TEST(s == "Hoolaa Muundoo");
-	
-
-	
-
-
+	*/
 	getchar();
 
 	return 0;
